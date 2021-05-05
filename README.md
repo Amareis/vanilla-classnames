@@ -15,6 +15,8 @@ npm install vanilla-classnames
 ```
 
 ## Usage 
+There is [codesandbox example](https://codesandbox.io/s/vanilla-classnames-example-1rfv8)
+
 ```ts
 // styles.css.ts
 import { style, composeStyles } from '@vanilla-extract/css'

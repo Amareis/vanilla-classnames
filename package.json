@@ -1,6 +1,6 @@
 {
   "name": "vanilla-classnames",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Better classnames utility for vanilla-extract",
   "keywords": [
     "css",

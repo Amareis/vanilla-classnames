@@ -23,24 +23,26 @@ import { style, composeStyles } from '@vanilla-extract/css'
 import { vcn } from 'vanilla-classnames'
 
 export const item = vcn(style({
-  //first, some base styles (but it can be omitted)
+  //first, some base styles (it can be omitted)
   background: 'blue',
-  cursor: 'pointer',
 }), {
   //and then, dynamic variants
   active: style({
     background: 'green',
   }),
-  //for composing multiply styles, use vanilla composeStyles
-  disabled: composeStyles(
+  
+  //if pass array from two classes, then
+  disabled: [
+    //first will be applied on truthy condition
     style({
       background: 'none',
       color: 'gray',
-    }), 
-    style({
-      cursor: 'default',
     }),
-  ),
+    //and second - for falsy or omitted condition
+    style({
+      cursor: 'pointer',
+    }),
+  ],
 })
 ```
 

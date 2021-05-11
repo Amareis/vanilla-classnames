@@ -32,3 +32,24 @@ describe('short form', () => {
     expect(t({ active: 0, someClass: 1 })).toBe('s')
   })
 })
+
+describe('with array', () => {
+  it('works', () => {
+    const t = vcn({
+      root: 'r',
+      active: ['a', 'i']
+    })
+    expect(t()).toBe('i')
+    expect(t({ active: 1 })).toBe('a')
+    expect(t({ active: 0 })).toBe('i')
+    expect(t({ active: 0, root: 0 })).toBe('i')
+    expect(t({ active: 0, root: 1 })).toBe('i r')
+    expect(t({ active: 1, root: 0 })).toBe('a')
+    expect(t({ active: 1, root: 1 })).toBe('a r')
+    expect(t({ root: 0, active: 0 })).toBe('i')
+    expect(t({ root: 0, active: 1 })).toBe('a')
+    expect(t({ root: 1, active: 0 })).toBe('r i')
+    expect(t({ root: 1, active: 1 })).toBe('r a')
+    expect(t({ root: 1 })).toBe('r i')
+  })
+})
